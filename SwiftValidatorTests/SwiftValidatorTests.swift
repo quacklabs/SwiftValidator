@@ -537,6 +537,21 @@ class SwiftValidatorTests: XCTestCase {
         }
     }
     
+    // MARK: Validate Number rule test
+    func testValidNumeric() {
+        let validAlphaNumeric = ["123456789", "0987654321"]
+        for alphaNum in validAlphaNumeric {
+            XCTAssertTrue(NumericRule().validate(alphaNum), "\(alphaNum) should be a valid numeric string")
+        }
+    }
+    
+    func testInvalidNumeric() {
+        let invalidAlphaNumeric = ["2239-999", "3444A994", "8776#8847@"]
+        for alphaNum in invalidAlphaNumeric {
+            XCTAssertFalse(NumericRule().validate(alphaNum), "\(alphaNum) should be an invalid numeric string")
+        }
+    }
+    
     // MARK: Validate error field gets it's text set to the error, if supplied
     
     func testNoErrorMessageSet() {
