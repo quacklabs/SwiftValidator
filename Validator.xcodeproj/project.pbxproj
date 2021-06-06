@@ -24,6 +24,8 @@
 		7CC1E4DB1C63BFA600AF013C /* HexColorRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC1E4DA1C63BFA600AF013C /* HexColorRule.swift */; };
 		C87F606A1E2B678B00EB8429 /* CardExpiryMonthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F60691E2B678B00EB8429 /* CardExpiryMonthRule.swift */; };
 		C87F606C1E2B68C900EB8429 /* CardExpiryYearRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F606B1E2B68C900EB8429 /* CardExpiryYearRule.swift */; };
+		DE66F5FC266B58E80064CEEB /* RemoteVerifyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66F5FB266B58E80064CEEB /* RemoteVerifyRule.swift */; };
+		DE66F600266B6F0B0064CEEB /* ParallelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66F5FF266B6F0A0064CEEB /* ParallelMapping.swift */; };
 		DE9AC7402660F788001A8A78 /* NumericRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AC73E2660F788001A8A78 /* NumericRule.swift */; };
 		FB465CB81B9884F400398388 /* SwiftValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = FB465CB71B9884F400398388 /* SwiftValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB465CBE1B9884F400398388 /* SwiftValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB465CB31B9884F400398388 /* SwiftValidator.framework */; };
@@ -118,6 +120,8 @@
 		7CC1E4DA1C63BFA600AF013C /* HexColorRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColorRule.swift; sourceTree = "<group>"; };
 		C87F60691E2B678B00EB8429 /* CardExpiryMonthRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpiryMonthRule.swift; sourceTree = "<group>"; };
 		C87F606B1E2B68C900EB8429 /* CardExpiryYearRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpiryYearRule.swift; sourceTree = "<group>"; };
+		DE66F5FB266B58E80064CEEB /* RemoteVerifyRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVerifyRule.swift; sourceTree = "<group>"; };
+		DE66F5FF266B6F0A0064CEEB /* ParallelMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelMapping.swift; sourceTree = "<group>"; };
 		DE9AC73D2660F787001A8A78 /* ValidatorTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ValidatorTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE9AC73E2660F788001A8A78 /* NumericRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericRule.swift; sourceTree = "<group>"; };
 		FB465CB31B9884F400398388 /* SwiftValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +313,7 @@
 				FB465CEE1B9889EA00398388 /* ValidationRule.swift */,
 				FB465CEF1B9889EA00398388 /* ZipCodeRule.swift */,
 				DE9AC73E2660F788001A8A78 /* NumericRule.swift */,
+				DE66F5FB266B58E80064CEEB /* RemoteVerifyRule.swift */,
 				62C1821C1C6312F5003788E7 /* ExactLengthRule.swift */,
 				256576A62232DFD900C8369F /* CardNumberRule.swift */,
 				256576A82232E01500C8369F /* Parsers */,
@@ -325,6 +330,7 @@
 				FB465CF21B9889EA00398388 /* Validator.swift */,
 				FB51E5AF1CD208B8004DE696 /* Validatable.swift */,
 				FBA963621CDA10130071F03E /* ValidatorDictionary.swift */,
+				DE66F5FF266B6F0A0064CEEB /* ParallelMapping.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -534,10 +540,12 @@
 				FB465CFF1B9889EA00398388 /* ZipCodeRule.swift in Sources */,
 				FB465CF91B9889EA00398388 /* PasswordRule.swift in Sources */,
 				7CC1E4D11C637A7700AF013C /* AlphaNumericRule.swift in Sources */,
+				DE66F600266B6F0B0064CEEB /* ParallelMapping.swift in Sources */,
 				7CC1E4D31C637ABC00AF013C /* CharacterSetRule.swift in Sources */,
 				FB465CFD1B9889EA00398388 /* Rule.swift in Sources */,
 				FB465CFA1B9889EA00398388 /* PhoneNumberRule.swift in Sources */,
 				FB465CF51B9889EA00398388 /* FloatRule.swift in Sources */,
+				DE66F5FC266B58E80064CEEB /* RemoteVerifyRule.swift in Sources */,
 				DE9AC7402660F788001A8A78 /* NumericRule.swift in Sources */,
 				C87F606C1E2B68C900EB8429 /* CardExpiryYearRule.swift in Sources */,
 				256576AA2232E01500C8369F /* CardParser.swift in Sources */,

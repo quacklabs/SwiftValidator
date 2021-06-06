@@ -12,6 +12,10 @@ import Foundation
  `MinLengthRule` is a subclass of Rule that defines how minimum character length is validated.
  */
 public class MinLengthRule: Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        return
+    }
+    
     /// Default minimum character length.
     private var DEFAULT_LENGTH: Int = 3
     /// Default error message to be displayed if validation fails.

@@ -11,6 +11,10 @@ import Foundation
  `MaxLengthRule` is a subclass of `Rule` that defines how maximum character length is validated.
  */
 public class MaxLengthRule: Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        return
+    }
+    
     /// Default maximum character length.
     private var DEFAULT_LENGTH: Int = 16
     /// Error message to be displayed if validation fails.

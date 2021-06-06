@@ -11,6 +11,7 @@ import Foundation
  `FullNameRule` is a subclass of Rule that defines how a full name is validated.
  */
 public class FullNameRule : Rule {
+    
     /// Error message to be displayed if validation fails.
     private var message : String
     
@@ -34,6 +35,11 @@ public class FullNameRule : Rule {
         let nameArray: [String] = value.split { $0 == " " }.map { String($0) }
         return nameArray.count >= 2
     }
+    
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        return
+    }
+    
     
     /**
      Used to display error message of a field that has failed validation.

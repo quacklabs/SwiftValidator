@@ -12,6 +12,10 @@ import Foundation
  `ISBNRule` is a subclass of `Rule`. It is used to verify whether a field is a valid ISBN number.
  */
 public class ISBNRule: Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        
+    }
+    
     
     /// String that holds error message
     private let message: String

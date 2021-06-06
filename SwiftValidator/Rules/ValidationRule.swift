@@ -38,8 +38,27 @@ public class ValidationRule {
      - returns: `ValidationError` object if at least one error is found. Nil is returned if there are no validation errors.
      */
     public func validateField() -> ValidationError? {
+//        return self.rules.filter{ rule in
+//                if !rule.validate(field.validationText) {
+//                    return false
+//                }
+////                rule.validate(field.validationText) { (result) in
+////                    switch result {
+////                    case .success(_):
+////                        return true
+////                    case .failure(_):
+////                        return false
+////                    }
+////                }
+//                return false
+//            }.parallel.map{ rule -> ValidationError in
+//                return ValidationError(field: self.field, errorLabel:self.errorLabel, error: rule.errorMessage())
+//            }.first
+        
         return rules.filter{
             return !$0.validate(field.validationText)
-            }.map{ rule -> ValidationError in return ValidationError(field: self.field, errorLabel:self.errorLabel, error: rule.errorMessage()) }.first
+        }.map{ rule -> ValidationError in
+              return ValidationError(field: self.field, errorLabel:self.errorLabel, error: rule.errorMessage())
+        }.first
     }
 }

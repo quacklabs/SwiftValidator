@@ -25,8 +25,9 @@ class SwiftValidatorTests: XCTestCase {
     let CONFIRM_TEXT = "Confirm this!"
     let CONFIRM_TEXT_DIFF = "I am not the same as the string above"
     
-    let VALID_PASSWORD = "Super$ecret"
+    let VALID_PASSWORD = "Super$ecret1"
     let INVALID_PASSWORD = "abc"
+    let INVALID_PASSWORD_NO_NUMBER = "Super$ecret"
     
     let VALID_FLOAT = "1234.444"
     let INVALID_FLOAT = "1234.44.44"
@@ -34,7 +35,7 @@ class SwiftValidatorTests: XCTestCase {
     let VALID_CARD_EXPIRY_MONTH = "10"
     let INVALID_CARD_EXPIRY_MONTH = "13"
     
-    let VALID_CARD_EXPIRY_YEAR = "2020"
+    let VALID_CARD_EXPIRY_YEAR = "2023"
     let INVALID_CARD_EXPIRY_YEAR = "2016"
     
     let LEN_3 = "hey"
@@ -305,6 +306,10 @@ class SwiftValidatorTests: XCTestCase {
     
     func testPasswordInvalid(){
         XCTAssertFalse(PasswordRule().validate(INVALID_PASSWORD), "Password is invalid")
+    }
+    
+    func testSecurePasswordInvalid() {
+        XCTAssertFalse(PasswordRule().validate(INVALID_PASSWORD_NO_NUMBER), "Password is invalid")
     }
     
     func testPasswordMessage() {
@@ -612,4 +617,20 @@ class SwiftValidatorTests: XCTestCase {
             XCTAssert(!(self.REGISTER_TXT_FIELD.layer.borderColor! == UIColor.red.cgColor), "Color shouldn't get set at all")
         }
     }
+    
+//    func testExistsOnRemoteRule() {
+//        // Create an expectation for a background download task.
+////        let expectation = XCTestExpectation(description: "Check if an email/password exists elsewhere")
+////        let correct_email = "name@example.com"
+////        REGISTER_VALIDATOR.registerField(REGISTER_TXT_FIELD, errorLabel: ERROR_LABEL, rules: [RemoteVerifyRule(name: "email")])
+////
+//////        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+//////            XCTAssertNil(<#T##expression: Any?##Any?#>, <#T##message: String##String#>)
+////////            CardNumberRule().validate(INVALID_VERVE_CARD, nil), "Invalid Verve Card should return false"
+////////            XCTAssertEqual(correct_email, "name@example.com")
+//////            expectation.fulfill()
+//////        })
+////        wait(for: [expectation], timeout: 10.0)
+//    }
+    
 }

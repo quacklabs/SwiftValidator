@@ -12,6 +12,10 @@ import Foundation
  `CardExpiryMonthRule` is a subclass of `Rule` that defines how a credit/debit's card expiry month field is validated
  */
 public class CardExpiryMonthRule: Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        return
+    }
+    
     /// Error message to be displayed if validation fails.
     private var message: String = "Must be a valid calendar month"
     /**

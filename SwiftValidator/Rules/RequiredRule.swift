@@ -12,6 +12,7 @@ import Foundation
  `RequiredRule` is a subclass of Rule that defines how a required field is validated.
  */
 open class RequiredRule: Rule {
+    
     /// String that holds error message.
     private var message : String 
     
@@ -33,6 +34,10 @@ open class RequiredRule: Rule {
      */
     open func validate(_ value: String) -> Bool {
         return !value.isEmpty
+    }
+    
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        
     }
     
     /**

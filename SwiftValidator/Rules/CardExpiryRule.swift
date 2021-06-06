@@ -14,6 +14,7 @@ import Foundation
  `CardExpiryRule` is a subclass of `Rule` that defines how a credit/debit's card number field is validated
  */
 public class CardExpiryRule: Rule {
+    
     /// Error message to be displayed if validation fails.
     private var message : String
     /**
@@ -31,26 +32,29 @@ public class CardExpiryRule: Rule {
      
      - parameter value: String to check for validation. must be a card expiry date in MM/YY format
      - returns: Boolean value. True on successful validation, otherwise False on failed Validation.
-     */
+     */    
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+           
+    }
+       
     public func validate(_ value: String) -> Bool {
-        guard value.count > 4 else{
-            return false
-        }
-        let date = value.replacingOccurrences(of: "/", with: "")
-        let monthIndex = date.index(date.startIndex, offsetBy: 2)
-        let Month = Int(date[..<monthIndex])
-        
-        let yearIndex = date.index(date.endIndex, offsetBy: -2)
-        let Year = Int(date[yearIndex...])
-        
-        ///Holds the current year
-        let thisYear = String(NSCalendar.current.component(Calendar.Component.year, from: Date()))
-        let thisYearLast2 = thisYear.index(thisYear.startIndex, offsetBy: 2)
-        let thisYearTwoDigits = Int(thisYear[thisYearLast2...])!
-        
-        
-        return Month! <= 12 && Year! >= thisYearTwoDigits
-        
+           guard value.count > 4 else{
+               return false
+           }
+           let date = value.replacingOccurrences(of: "/", with: "")
+           let monthIndex = date.index(date.startIndex, offsetBy: 2)
+           let Month = Int(date[..<monthIndex])
+           
+           let yearIndex = date.index(date.endIndex, offsetBy: -2)
+           let Year = Int(date[yearIndex...])
+           
+           ///Holds the current year
+           let thisYear = String(NSCalendar.current.component(Calendar.Component.year, from: Date()))
+           let thisYearLast2 = thisYear.index(thisYear.startIndex, offsetBy: 2)
+           let thisYearTwoDigits = Int(thisYear[thisYearLast2...])!
+           
+           
+           return Month! <= 12 && Year! >= thisYearTwoDigits
     }
     
     /**

@@ -12,6 +12,10 @@ import Foundation
  `FloatRule` is a subclass of Rule that defines how check if a value is a floating point value.
  */
 public class FloatRule:Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        return
+    }
+    
     /// Error message to be displayed if validation fails.
     private var message : String
     

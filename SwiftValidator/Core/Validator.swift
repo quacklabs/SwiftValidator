@@ -12,6 +12,8 @@ import UIKit
  Class that makes `Validator` objects. Should be added as a parameter to ViewController that will display
  validation fields.
  */
+public typealias Handler = (Swift.Result<Any?, Error>) -> Void
+
 public class Validator {
     /// Dictionary to hold all fields (and accompanying rules) that will undergo validation.
     public var validations = ValidatorDictionary<ValidationRule>()
@@ -138,6 +140,10 @@ public class Validator {
         }
         
     }
+//    
+//    public func validate(_ delegate: ValidationDelegate, _ completion: @escaping Handler) {
+//        
+//    }
     
     /**
      This method validates all fields in validator and sets any errors to errors parameter of callback.

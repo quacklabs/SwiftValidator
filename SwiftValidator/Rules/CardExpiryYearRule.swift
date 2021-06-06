@@ -12,6 +12,10 @@ import Foundation
  `CardExpiryYearRule` is a subclass of `Rule` that defines how a credit/debit's card expiry year field is validated
  */
 public class CardExpiryYearRule: Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        return
+    }
+    
     /// Error message to be displayed if validation fails.
     private var message: String = "Must be within 3 years of validity"
     ///Default maximum validity period. Change to preferred value

@@ -11,6 +11,10 @@ import Foundation
  `CardNumberRule` is a subclass of `Rule` that defines how a credit/debit's card number field is validated
  */
 public class CardNumberRule: Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        
+    }
+    
     /// Error message to be displayed if validation fails.
     private var message : String
     /**

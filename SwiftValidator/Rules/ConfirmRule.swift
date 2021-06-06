@@ -14,6 +14,10 @@ import UIKit
  to another field is validated.
  */
 public class ConfirmationRule: Rule {
+    public func validate(_ value: String, _ completion: @escaping Handler) {
+        return
+    }
+    
     /// parameter confirmField: field to which original text field will be compared to.
     private let confirmField: ValidatableField
     /// parameter message: String of error message.

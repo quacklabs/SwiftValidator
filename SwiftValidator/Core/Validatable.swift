@@ -26,6 +26,15 @@ extension UITextField: Validatable {
 }
 
 extension UITextView: Validatable {
+    public var name: String {
+        get {
+            return self.name
+        }
+        set {
+            self.name = newValue
+        }
+    }
+    
     
     public var validationText: String {
         return text ?? ""
