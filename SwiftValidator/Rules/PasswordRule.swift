@@ -7,19 +7,6 @@
 
 import Foundation
 
-public enum PasswordComplexity {
-    case simple
-    case secure
-    var regex: String {
-        switch self {
-        case .simple:
-            return "^(?=.*?[A-Z]).{8,}$"
-        case .secure:
-            return "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-        }
-    }
-}
-
 /**
  `PasswordRule` is a subclass of RegexRule that defines how a password is validated.
  */
@@ -27,8 +14,8 @@ public class PasswordRule : RegexRule {
     
     // Alternative Regexes
     
-    // 8 characters. One uppercase. One Lowercase. One number.
-//     static let regex = "^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[a-z]).{8,}$"
+    // 8 characters. One uppercase. One Lowercase. One number, one special character.
+     static let regex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
     //
     // no length. One uppercase. One lowercae. One number.
     // static let regex = "^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[a-z]).*?$"
@@ -42,7 +29,7 @@ public class PasswordRule : RegexRule {
      - parameter message: String of error message.
      - returns: An initialized `PasswordRule` object, or nil if an object could not be created for some reason that would not result in an exception.
      */
-    public convenience init(complexity: PasswordComplexity? = .secure, message : String = "Must be 8 characters with 1 uppercase, 1 lower case, 1 number and 1 special character") {
-        self.init(regex: complexity!.regex, message : message)
+    public convenience init(message : String = "Must be 8 characters with 1 uppercase, 1 lower case, 1 number and 1 special character") {
+        self.init(regex: PasswordRule.regex, message : message)
     }
 }
