@@ -92,6 +92,18 @@ enum CardType {
         }
     }
     
+    func cardName() -> String {
+        switch self {
+        case .amex: return "Amex"
+        case .diners: return "Diners"
+        case .discover: return "Discover"
+        case .jcb: return "JCB"
+        case .mastercard: return "Mastercard"
+        case .verve: return "Verve"
+        case .visa: return "Visa"
+        }
+    }
+    
     func isValid(_ accountNumber: String) -> Bool {
         return validationRequirements.isValid(accountNumber) && CardType.luhnCheck(accountNumber)
     }
