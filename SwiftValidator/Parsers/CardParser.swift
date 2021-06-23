@@ -6,7 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 //MARK: - CardType
-enum CardType {
+public enum CardType {
     case amex
     case diners
     case discover
@@ -92,7 +92,7 @@ enum CardType {
         }
     }
     
-    func cardName() -> String {
+    public func cardName() -> String {
         switch self {
         case .amex: return "Amex"
         case .diners: return "Diners"
@@ -168,7 +168,7 @@ fileprivate extension CardType {
 
 
 //MARK: - CardState
-enum CardState {
+public enum CardState {
     case identified(CardType)
     case indeterminate([CardType])
     case invalid
@@ -176,7 +176,7 @@ enum CardState {
 
 
 extension CardState: Equatable {}
-    func ==(lhs: CardState, rhs: CardState) -> Bool {
+    public func ==(lhs: CardState, rhs: CardState) -> Bool {
         switch (lhs, rhs) {
         case (.invalid, .invalid): return true
         case (let .indeterminate(cards1), let .indeterminate(cards2)): return cards1 == cards2
@@ -186,7 +186,7 @@ extension CardState: Equatable {}
 }
 
 
-extension CardState {
+public extension CardState {
     
     init(fromNumber number: String) {
         if let card = CardType.allValues.first(where: { $0.isValid(number) }) {

@@ -618,6 +618,17 @@ class SwiftValidatorTests: XCTestCase {
         }
     }
     
+    func testCardReturnCorrectName() {
+        let verve = CardState(fromPrefix: "50610")
+        
+        switch verve {
+        case .identified(let type):
+            XCTAssertEqual(type.cardName(), "Verve")
+        default:
+            break;
+        }
+    }
+    
 //    func testExistsOnRemoteRule() {
 //        // Create an expectation for a background download task.
 ////        let expectation = XCTestExpectation(description: "Check if an email/password exists elsewhere")
